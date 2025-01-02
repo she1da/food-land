@@ -4,13 +4,13 @@ export default function Hero(): JSX.Element {
   return (
     <section className=" flex flex-wrap items-center justify-between mx-auto p-4  pt-10">
       <div className="flex flex-wrap">
-        <div className="w-full sm:w-8/12 mb-10">
+        <div className="w-full sm:w-8/12  mb-10">
           <div className="container mx-auto h-full sm:p-10">
             <nav className="flex px-4 justify-between items-center">
               <div className="text-4xl font-bold">
                 <button
                   type="button"
-                  className="inline-flex items-center mt-6 px-2 py-2 text-sm font-medium text-center text-white bg-[#EF4444] hover:bg-[#dc5555] focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-[40px]  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="inline-flex items-center w-[270px] mt-6 px-2 py-2 text-lg font-medium text-center text-white bg-[#EF4444] hover:bg-[#dc5555] focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-[40px]  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   <span>Bike Delivery</span>
                   <Image
@@ -48,7 +48,7 @@ export default function Hero(): JSX.Element {
         </div>
         <div className="w-full sm:w-2/12  mt-10   mb-10">
           <div className="sm:w-6/12 relative">
-            <a href="#" className="absolute left-0 top-[-10%]">
+            <a href="#" className="absolute  -top-20 left-0 w-60  ">
               <Image
           src="/burger_sandwich_PNG4135 1.png"
                 alt="Next.js logo"
@@ -57,7 +57,7 @@ export default function Hero(): JSX.Element {
                 priority
               />
             </a>
-            <div className=" max-w-sm flex flex-wrap items-center justify-center  mt-10 pt-6  bg-white border border-gray-200 w-[258px] h-[275px] rounded-[30px] shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className=" max-w-sm flex flex-wrap items-center justify-center  mt-10 pt-6  bg-white shadow-lg w-[258px] h-[275px] rounded-[30px]  dark:bg-gray-800 dark:border-gray-700">
               <div className="p-5  items-center justify-center ">
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -75,7 +75,7 @@ export default function Hero(): JSX.Element {
             </div>
           </div>
           <div className="sm:w-6/12 relative">
-            <a href="#" className="absolute left-0 top-[-10%]">
+          <div className="">     <a href="#" className="absolute  -top-20 left-0 w-60  ">
               <Image
                 src="/pizza-png-12 1.png"
                 alt="Next.js logo"
@@ -84,7 +84,7 @@ export default function Hero(): JSX.Element {
                 priority
               />
             </a>
-            <div className=" max-w-sm flex flex-wrap items-center justify-center  mt-10 pt-6  bg-white border border-gray-200 w-[258px] h-[275px] rounded-[30px] shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className=" max-w-sm flex flex-wrap items-center justify-center  mt-10 pt-6  bg-white shadow-lg w-[258px] h-[275px] rounded-[30px] shadow dark:bg-gray-800 dark:border-gray-700">
               <div className="p-5  items-center justify-center ">
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -99,14 +99,15 @@ export default function Hero(): JSX.Element {
                   <span className="text-[#B91C1C]">$</span>6.15
                 </p>
               </div>
-            </div>
+            </div> </div>
+       
           </div>
           
           
         </div>
         <div className="w-full sm:w-2/12  mt-10   mb-10">
           <div className="sm:w-6/12 relative">
-            <a href="#" className="absolute left-0 top-[-10%]">
+            <a href="#" className="absolute  -top-20 left-0 w-60  ">
               <Image
                 src="/Combo-Junk-Food-PNG-Image 2.png"
                 alt="burger_sandwich_PNG4135 1"
@@ -115,7 +116,7 @@ export default function Hero(): JSX.Element {
                 priority
               />
             </a>
-            <div className=" max-w-sm flex flex-wrap items-center justify-center  mt-10 pt-6  bg-white border border-gray-200 w-[258px] h-[275px] rounded-[30px] shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className=" max-w-sm flex flex-wrap items-center justify-center  mt-10 pt-6  bg-white shadow-lg w-[258px] h-[275px] rounded-[30px] shadow dark:bg-gray-800 dark:border-gray-700">
               <div className="p-5  items-center justify-center ">
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -131,8 +132,8 @@ export default function Hero(): JSX.Element {
               </div>
             </div>
           </div>
-          <div className="sm:w-6/12 relative">
-            <a href="#" className="absolute left-0 top-[-10%]">
+          <div className="sm:w-6/12 relative ">
+            <a href="#"className="absolute  -top-20 left-0 w-60  ">
               <Image
                 src="/purepng 1.png"
                 alt="Next.js logo"
@@ -141,7 +142,7 @@ export default function Hero(): JSX.Element {
                 priority
               />
             </a>
-            <div className=" max-w-sm flex flex-wrap items-center justify-center  mt-10 pt-6  bg-white border border-gray-200 w-[258px] h-[275px] rounded-[30px] shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className=" max-w-sm flex flex-wrap items-center justify-center  mt-10 pt-6  bg-white shadow-lg w-[258px] h-[275px] rounded-[30px] shadow dark:bg-gray-800 dark:border-gray-700">
               <div className="p-5  items-center justify-center ">
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
