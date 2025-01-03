@@ -3,87 +3,156 @@ import Image from "next/image";
 
 export default function Card(): JSX.Element {
   return (
-  
-     
-      
-      
-      
-       
-    <section className=" flex flex-wrap items-center justify-center mx-auto p-4  pt-10">
-   
+    <section className=" flex flex-wrap w-full items-center justify-between mx-auto p-4  pt-10">
+      <div className="w-full md:w-12/12 items-center justify-center">
+        <span>Product</span>
+        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          Most Popular Items
+        </h2>
+      </div>
 
-
-<div class="grid gap-x-8 gap-y-4 grid-cols-3">
-  <div>   <div className="relative max-w-xs shadow rounded-2xl transition-all duration-500 ">
-            <div className="block overflow-hidden">
-              <Image
-                className="dark:invert inline-flex items-center justify-center ms-6 right-0 text-xs font-semibold text-blue-800 bg-blue-200 "
-                src="/Mask group (2).png"
-                alt="Next.js logo"
-                width={458}
-                height={333}
-                priority
-              />
+      <div className="w-full md:w-12/12">
+        <div className="grid  grid-cols-3 gap-x-8 gap-y-4 justify-items-center">
+          <div className="p-6 m-6 justify-self-auto">
+            <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
+              <a href="#">
+                <Image
+                  className=" rounded-t-3xl "
+                  src="/gyro-sandwich1-1650490757 1.png"
+                  alt="Next.js logo"
+                  width={485}
+                  height={485}
+                  layout="responsive"
+                  objectFit="cover"
+                  priority
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Gyro Sandwhich
+                  </h5>
+                </a>
+              </div>
             </div>
-            <div className="p-4">
-              <h4 className="text-base font-semibold text-gray-900 mb-2 capitalize transition-all duration-500 ">
-                Fast Transaction
-              </h4>
-              <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 mb-5">
-                Provides faster transaction, so money arrives in realtime
-              </p>
-              <button className="bg-indigo-600 shadow-sm rounded-full py-2 px-5 text-xs text-white font-semibold">
-                Read More
-              </button>
+          </div>
+          <div className="p-6 m-6">
+            <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
+              <a href="#">
+                <Image
+                  className=" rounded-t-3xl "
+                  src="/Mask group.png"
+                  alt="Next.js logo"
+                  width={485}
+                  height={485}
+                  layout="responsive"
+                  objectFit="cover"
+                  priority
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Enchilade
+                  </h5>
+                </a>
+              </div>
             </div>
-          </div></div>
-  <div>    <div className="relative max-w-xs shadow rounded-2xl transition-all duration-500 ">
-            <div className="block overflow-hidden">
-              <Image
-                className="dark:invert inline-flex items-center justify-center ms-6 right-0 text-xs font-semibold text-blue-800 bg-blue-200 "
-                src="/Mask group (3).png"
-                alt="Next.js logo"
-                width={458}
-                height={333}
-                priority
-              />
+          </div>
+          <div className="p-6 m-6">
+            <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
+              <a href="#">
+                <Image
+                  className=" rounded-t-3xl "
+                  src="/Mask group (1).png"
+                  alt="Next.js logo"
+                  width={485}
+                  height={485}
+                  layout="responsive"
+                  objectFit="cover"
+                  priority
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Green Beans
+                  </h5>
+                </a>
+              </div>
             </div>
-            <div className="p-4">
-              <h4 className="text-base font-semibold text-gray-900 mb-2 capitalize transition-all duration-500 ">
-                Fast Transaction
-              </h4>
-              <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 mb-5">
-                Provides faster transaction, so money arrives in realtime{" "}
-              </p>
-              <button className="bg-indigo-600 shadow-sm rounded-full py-2 px-5 text-xs text-white font-semibold">
-                Read More
-              </button>
+          </div>
+          <div className="p-6 m-6">
+            <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
+              <a href="#">
+                <Image
+                  className=" rounded-t-3xl "
+                  src="/Mask group (2).png"
+                  alt="Next.js logo"
+                  width={485}
+                  height={485}
+                  layout="responsive"
+                  objectFit="cover"
+                  priority
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Pizza
+                  </h5>
+                </a>
+              </div>
             </div>
-          </div></div>
-  <div>     <div className="relative max-w-xs shadow rounded-2xl transition-all duration-500 ">
-            <div className="block overflow-hidden">
-              <Image
-                className="dark:invert inline-flex items-center justify-center ms-6 right-0 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full"
-                src="/Mask group (1).png"
-                alt="Next.js logo"
-                width={458}
-                height={333}
-                priority
-              />
+          </div>
+          <div className="p-6 m-6">
+            <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
+              <a href="#">
+                <Image
+                  className=" rounded-t-3xl "
+                  src="/Mask group (3).png"
+                  alt="Next.js logo"
+                  width={485}
+                  height={485}
+                  layout="responsive"
+                  objectFit="cover"
+                  priority
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Chicken Pot Pie
+                  </h5>
+                </a>
+              </div>
             </div>
-            <div className="p-4">
-              <h4 className="text-base font-semibold text-gray-900 mb-2 capitalize transition-all duration-500 ">
-                Fast Transaction
-              </h4>
-              <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 mb-5">
-                Provides faster transaction, so money arrives in realtime{" "}
-              </p>
-              <button className="bg-indigo-600 shadow-sm rounded-full py-2 px-5 text-xs text-white font-semibold">
-                Read More
-              </button>
+          </div>
+          <div className="p-6 m-6">
+            <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
+              <a href="#">
+                <Image
+                  className=" rounded-t-3xl "
+                  src="/Mask group (1).png"
+                  alt="Next.js logo"
+                  width={485}
+                  height={485}
+                  layout="responsive"
+                  objectFit="cover"
+                  priority
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Green Salad
+                  </h5>
+                </a>
+              </div>
             </div>
-          </div></div>
-
-</div></section>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
