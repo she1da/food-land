@@ -24,7 +24,7 @@ export default function Intro(): JSX.Element {
                 <div className="py-3 sm:py-4">
                   <Image
                     className=" w-full rounded-2xl"
-                    src="/unsplash_ZuIDLSz3XLg.png"
+                    src="/unsplash_CLMpC9UhyTo.png"
                     alt="Next.js logo"
                     width={98}
                     height={98}
@@ -34,7 +34,7 @@ export default function Intro(): JSX.Element {
                 <div className="py-3 sm:py-4">
                   <Image
                     className=" w-full rounded-2xl"
-                    src="/unsplash_CLMpC9UhyTo.png"
+                    src="/unsplash_ZuIDLSz3XLg.png"
                     alt="Next.js logo"
                     width={98}
                     height={98}
