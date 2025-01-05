@@ -10,12 +10,6 @@ export default function Intro(): JSX.Element {
             <div className="flex items-center -mx-3 sm:-mx-4">
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <div className="relative z-10 my-4">
-                  {/* <img
-                    src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-3.jpg"
-                    alt=""
-                    className="w-full rounded-2xl"
-                  /> */}
-
                   <Image
                     className="w-full rounded-2xl"
                     src="/unsplash_lP5MCM6nZ5A.png"
@@ -28,11 +22,6 @@ export default function Intro(): JSX.Element {
               </div>
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <div className="py-3 sm:py-4">
-                  {/* <img
-                    src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-1.jpg"
-                    alt=""
-                    className="w-full rounded-2xl"
-                  /> */}
                   <Image
                     className=" w-full rounded-2xl"
                     src="/unsplash_ZuIDLSz3XLg.png"
@@ -43,12 +32,6 @@ export default function Intro(): JSX.Element {
                   />
                 </div>
                 <div className="py-3 sm:py-4">
-                  {/* <img
-                    src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-2.jpg"
-                    alt=""
-                    className="w-full rounded-2xl"
-                  /> */}
-
                   <Image
                     className=" w-full rounded-2xl"
                     src="/unsplash_CLMpC9UhyTo.png"
