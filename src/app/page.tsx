@@ -1,10 +1,9 @@
-import Image from "next/image";
 import Hero from "./components/Hero";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Card from "./components/card";
 import Info from "./components/info";
 import Services from "./components/services";
+import Testimonial from "./components/Testimonial";
+import Newsletter from "./components/newsletter";
 
 export default function Home() {
   return (
@@ -14,6 +13,8 @@ export default function Home() {
         <Info />
         <Card />
         <Services />
+        <Testimonial />
+        <Newsletter />
       </main>
     </div>
   );
