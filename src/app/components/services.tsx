@@ -26,10 +26,11 @@ export default function Services(): JSX.Element {
                   priority
                 />
                 <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-                  Bonnie Green
+                  Qualityfull Food
                 </h5>
                 <span className="text-sm text-gray-500 dark:text-gray-400">
-                  Visual Designer
+                  But I must explain to you how all this mistaken idea of
+                  denouncing pleasur and prasising pain was bron.
                 </span>
                 <div className="flex mt-4 md:mt-6"></div>
               </div>
@@ -48,10 +49,11 @@ export default function Services(): JSX.Element {
                   priority
                 />
                 <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-                  Bonnie Green
+                  Qualityfull Food
                 </h5>
                 <span className="text-sm text-gray-500 dark:text-gray-400">
-                  Visual Designer
+                  But I must explain to you how all this mistaken idea of
+                  denouncing pleasur and prasising pain was bron.
                 </span>
                 <div className="flex mt-4 md:mt-6"></div>
               </div>
@@ -70,10 +72,11 @@ export default function Services(): JSX.Element {
                   priority
                 />
                 <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-                  Bonnie Green
+                  Qualityfull Food
                 </h5>
                 <span className="text-sm text-gray-500 dark:text-gray-400">
-                  Visual Designer
+                  But I must explain to you how all this mistaken idea of
+                  denouncing pleasur and prasising pain was bron.
                 </span>
                 <div className="flex mt-4 md:mt-6"></div>
               </div>
