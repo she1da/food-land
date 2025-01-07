@@ -3,18 +3,18 @@ import Image from "next/image";
 
 export default function Newsletter(): JSX.Element {
   return (
-    <section className=" flex flex-wrap w-full items-center justify-between mx-auto p-4 m-10  pt-10">
+    <section className=" flex flex-wrap relative w-full items-center justify-between mx-auto p-4 m-10  pt-10">
       <div className="flex flex-wrap w-full">
         <div className="bg-gray-900 w-full  rounded-3xl">
           <div className="mx-auto grid w-full  grid-cols-2 ">
-            <div className="relative  sm:w-1/2  ">
-              <div className="absolute -top-20">
+            <div className="  ">
+              <div className="absolute -top-1/3 ">
                 <Image
                   className=""
                   src="/burger_sandwich_PNG4135 2.png"
                   alt="Next.js logo"
                   width={620}
-                  height={750}
+                  height={570}
                   priority
                 />
               </div>

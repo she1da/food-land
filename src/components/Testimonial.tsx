@@ -7,17 +7,16 @@ export default function Testimonial(): JSX.Element {
       <div className="flex flex-wrap w-full">
         <div className="w-full sm:w-6/12  mb-10 ">
           <div className="mt-6 font-[sans-serif]">
-            <div className="max-w-4xl mx-auto relative rounded-lg shadow m-6 p-6">
+            <div className="max-w-4xl mx-auto relative h-[445px] rounded-[35px] shadow-md m-6 p-6">
               <div className="text-center"></div>
 
-              <div className="max-w-xl mt-16 mx-auto">
-                <div className="flex flex-col items-center text-center">
+              <div className="max-w-xl mt-16 mx-auto ">
+                <div className="flex flex-wrap justify-center items-center text-center">
                   <Image
-                    className="w-28 h-28 rounded-full shadow-[0_2px_22px_-4px_rgba(93,96,127,0.6)] border-2 border-white"
+                    className="w-28 h-28  "
                     src="/Group 30.png"
                     alt="Next.js logo"
                     width={76}
-                    
                     height={76}
                     priority
                   />
@@ -25,7 +24,9 @@ export default function Testimonial(): JSX.Element {
                     <h4 className="text-gray-800 text-base font-extrabold">
                       Willians Jhone
                     </h4>
-                    <p className="text-xs text-gray-500 mt-1">CEO, Company</p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      CEO & Co-Founder
+                    </p>
                   </div>
                 </div>
 
@@ -45,9 +46,9 @@ export default function Testimonial(): JSX.Element {
                   viewBox="0 0 24 24"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                     data-original="#000000"
                   ></path>
                 </svg>
@@ -59,9 +60,9 @@ export default function Testimonial(): JSX.Element {
                   viewBox="0 0 24 24"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                     data-original="#000000"
                   ></path>
                 </svg>

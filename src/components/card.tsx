@@ -12,8 +12,8 @@ export default function Card(): JSX.Element {
       </div>
 
       <div className="w-full md:w-12/12">
-        <div className="grid  grid-cols-3 gap-x-8 gap-y-4 justify-items-center">
-          <div className="p-6 m-6 justify-self-auto">
+        <div className="grid  grid-cols-3 gap-x-4 gap-y-4 ">
+          <div className="justify-self-auto">
             <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
               <a href="#">
                 <Image
@@ -36,7 +36,7 @@ export default function Card(): JSX.Element {
               </div>
             </div>
           </div>
-          <div className="p-6 m-6">
+          <div className="">
             <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
               <a href="#">
                 <Image
@@ -59,7 +59,7 @@ export default function Card(): JSX.Element {
               </div>
             </div>
           </div>
-          <div className="p-6 m-6">
+          <div className="">
             <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
               <a href="#">
                 <Image
@@ -82,7 +82,7 @@ export default function Card(): JSX.Element {
               </div>
             </div>
           </div>
-          <div className="p-6 m-6">
+          <div className="">
             <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
               <a href="#">
                 <Image
@@ -105,7 +105,7 @@ export default function Card(): JSX.Element {
               </div>
             </div>
           </div>
-          <div className="p-6 m-6">
+          <div className="">
             <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
               <a href="#">
                 <Image
@@ -128,7 +128,7 @@ export default function Card(): JSX.Element {
               </div>
             </div>
           </div>
-          <div className="p-6 m-6">
+          <div className="">
             <div className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl">
               <a href="#">
                 <Image
