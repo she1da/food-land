@@ -1,7 +1,70 @@
-import React from "react";
+"use client";
+import React, { createContext, useState, ReactNode } from "react";
+
 import Image from "next/image";
 
-export default function ShoppingCart(): JSX.Element {
+const CounterContext = createContext({
+  count: 0,
+  setCount: () => {},
+});
+
+const CounterProvider = ({ children }) => {
+  const [count, setCount] = useState(0);
+  console.log({ count });
+  return (
+    <CounterContext.Provider value={{ count, setCount }}>
+      {children}
+    </CounterContext.Provider>
+  );
+};
+
+export { CounterContext, CounterProvider };
+// interface CartItem {
+//   id: number;
+//   name: string;
+//   price: number;
+// }
+
+// interface CartContextType {
+//   cart: CartItem[];
+//   addToCart: (item: CartItem) => void;
+//   removeFromCart: (id: number) => void;
+//   clearCart: () => void;
+// }
+
+// export const CartContext = createContext<CartContextType | undefined>(
+//   undefined
+// );
+
+// export const CartProvider: React.FC<{ children: ReactNode }> = ({
+//   children,
+// }) => {
+//   const [cart, setCart] = useState<CartItem[]>([]);
+
+//   const addToCart = (item: CartItem) => {
+//     debugger;
+//     setCart((prevCart) => [...prevCart, item]);
+//   };
+
+//   const removeFromCart = (id: number) => {
+//     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+//   };
+
+//   const clearCart = () => {
+//     setCart([]);
+//   };
+
+//   return (
+//     <CartContext.Provider
+//       value={{ cart, addToCart, removeFromCart, clearCart }}
+//     >
+//       {children}
+//     </CartContext.Provider>
+//   );
+// };
+
+// export { CounterContext, CounterProvider };
+export default function ShoppingCartB(): JSX.Element {
   return (
     <section className=" relative z-10 after:contents-[''] after:absolute after:z-0 after:h-full xl:after:w-1/3 after:top-0 after:right-0 after:bg-gray-50">
       <div className="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto relative z-10">
@@ -9,7 +72,7 @@ export default function ShoppingCart(): JSX.Element {
           <div className="col-span-12 xl:col-span-8 lg:pr-8 pt-14 pb-8 lg:py-24 w-full max-xl:max-w-3xl max-xl:mx-auto">
             <div className="flex items-center justify-between pb-8 border-b border-gray-300">
               <h2 className="font-manrope font-bold text-3xl leading-10 text-black">
-                Shopping Cart
+                Shopping Cart B
               </h2>
               <h2 className="font-manrope font-bold text-xl leading-8 text-gray-600">
                 3 Items
@@ -79,22 +142,22 @@ export default function ShoppingCart(): JSX.Element {
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </button>
@@ -115,22 +178,22 @@ export default function ShoppingCart(): JSX.Element {
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </button>
@@ -186,22 +249,22 @@ export default function ShoppingCart(): JSX.Element {
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </button>
@@ -222,22 +285,22 @@ export default function ShoppingCart(): JSX.Element {
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </button>
@@ -293,22 +356,22 @@ export default function ShoppingCart(): JSX.Element {
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </button>
@@ -329,22 +392,22 @@ export default function ShoppingCart(): JSX.Element {
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M11 5.5V16.5M16.5 11H5.5"
                           stroke=""
                           stroke-opacity="0.2"
-                          stroke-width="1.6"
-                          stroke-linecap="round"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </button>
@@ -372,8 +435,8 @@ export default function ShoppingCart(): JSX.Element {
                   <path
                     d="M12.7757 5.5L18.3319 11.0562M18.3319 11.0562L12.7757 16.6125M18.3319 11.0562L1.83203 11.0562"
                     stroke="#4F46E5"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
                   />
                 </svg>
               </button>
@@ -425,8 +488,8 @@ export default function ShoppingCart(): JSX.Element {
                         <path
                           d="M1 1.5L4.58578 5.08578C5.25245 5.75245 5.58579 6.08579 6 6.08579C6.41421 6.08579 6.74755 5.75245 7.41421 5.08579L11 1.5"
                           stroke="#6B7280"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
                           stroke-linejoin="round"
                         ></path>
                       </svg>
@@ -504,8 +567,8 @@ export default function ShoppingCart(): JSX.Element {
                         <path
                           d="M1 1.5L4.58578 5.08578C5.25245 5.75245 5.58579 6.08579 6 6.08579C6.41421 6.08579 6.74755 5.75245 7.41421 5.08579L11 1.5"
                           stroke="#6B7280"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
                           stroke-linejoin="round"
                         ></path>
                       </svg>
