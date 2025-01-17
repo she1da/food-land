@@ -1,30 +1,71 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { useContext } from "react";
-import { CounterContext } from "@/components/shoppingCart";
+import { useAppContext } from "@/components/shoppingCart";
+import ShoppingCart from "./ShoppingCart";
 
 export default function Card(): JSX.Element {
-  const [counts, setCounts] = useState({
-    gyro: 0,
-    enchilada: 0,
-    greenBeans: 0,
-    pizza: 0,
-    chickenPotPie: 0,
-    greenSalad: 0,
-  });
+  const { count, setCount } = useAppContext();
+  const [counts, setCounts] = useState<{ [key: string]: number }>({});
 
-  const addToCart = (item: string) => {
+  const [menuItems, setMenuItems] = useState([]);
+
+  const [cartItems, setCartItems] = useState<
+    { id: string; title: string; count: number; image: string }[]
+  >([]);
+
+  useEffect(() => {
+    const fetchMenuItems = async () => {
+      const response = await fetch(
+        "https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=5&apiKey=6f2e110e9b304f47b7758c49a21235c1"
+      );
+      const data = await response.json();
+      setMenuItems(data.results);
+    };
+
+    fetchMenuItems();
+  }, []);
+
+  useEffect(() => {
+    console.log({ count });
+  }, [count]);
+
+  const addToCart = (id: string) => {
+    const itemToAdd = menuItems.find((item) => item.id === id);
+    if (!itemToAdd) return;
+
+    const updatedCartItems = [...cartItems];
+    const existingItemIndex = updatedCartItems.findIndex(
+      (item) => item.id === id
+    );
+
+    if (existingItemIndex > -1) {
+      updatedCartItems[existingItemIndex].count += 1;
+    } else {
+      updatedCartItems.push({
+        id,
+        title: itemToAdd.title,
+        count: 1,
+        image: itemToAdd.image,
+      });
+    }
+
+    setCartItems(updatedCartItems);
     setCounts((prevCounts) => ({
       ...prevCounts,
-      [item]: prevCounts[item] + 1,
+      [id]: (prevCounts[id] || 0) + 1,
     }));
   };
 
-  const removeFromCart = (item: string) => {
+  useEffect(() => {
+    localStorage.setItem("cartTime", new Date().getTime().toString());
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const removeFromCart = (id: string) => {
     setCounts((prevCounts) => ({
       ...prevCounts,
-      [item]: Math.max(prevCounts[item] - 1, 0),
+      [id]: Math.max((prevCounts[id] || 0) - 1, 0),
     }));
   };
 
@@ -39,242 +80,51 @@ export default function Card(): JSX.Element {
 
       <div className="w-full md:w-12/12">
         <div className="grid  grid-cols-3 gap-x-4 gap-y-4 ">
-          <div className="justify-self-auto">
-            <div
-              className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl"
-              id="gyro-sandwich"
-            >
-              <a href="#">
-                <Image
-                  className=" rounded-t-3xl "
-                  src="/gyro-sandwich1-1650490757 1.png"
-                  alt="Next.js logo"
-                  width={485}
-                  height={485}
-                  layout="responsive"
-                  objectFit="cover"
-                  priority
-                />
-              </a>
-              <div className="p-5">
+          {menuItems.map((item) => (
+            <div key={item.id} className="">
+              <div
+                className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl"
+                id={item.title.toLowerCase().replace(/\s+/g, "-")}
+              >
                 <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Gyro Sandwhich
-                  </h5>
+                  <Image
+                    className=" rounded-t-3xl "
+                    src={item.image}
+                    alt={item.title}
+                    width={485}
+                    height={485}
+                    layout="responsive"
+                    objectFit="cover"
+                    priority
+                  />
                 </a>
-                <button
-                  onClick={() => removeFromCart("gyro")}
-                  className="mt-2 bg-red-500 text-white py-2 px-4 rounded"
-                >
-                  -
-                </button>
-                <span className="mx-2">{counts.gyro}</span>
-                <button
-                  onClick={() => addToCart("gyro")}
-                  className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
-                >
-                  +
-                </button>
+                <div className="p-5">
+                  <a href="#">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      {item.title}
+                    </h5>
+                  </a>
+                  <button
+                    onClick={() => removeFromCart(item.id)}
+                    className="mt-2 bg-red-500 text-white py-2 px-4 rounded"
+                  >
+                    -
+                  </button>
+                  <span className="mx-2">{counts[item.id] || 0}</span>
+                  <button
+                    onClick={() => addToCart(item.id)}
+                    className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="">
-            <div
-              className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl"
-              id="enchilada"
-            >
-              <a href="#">
-                <Image
-                  className=" rounded-t-3xl "
-                  src="/Mask group.png"
-                  alt="Next.js logo"
-                  width={485}
-                  height={485}
-                  layout="responsive"
-                  objectFit="cover"
-                  priority
-                />
-              </a>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Enchilade
-                  </h5>
-                </a>
-                <button
-                  onClick={() => removeFromCart("enchilada")}
-                  className="mt-2 bg-red-500 text-white py-2 px-4 rounded"
-                >
-                  -
-                </button>
-                <span className="mx-2">{counts.enchilada}</span>
-                <button
-                  onClick={() => addToCart("enchilada")}
-                  className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="">
-            <div
-              className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl"
-              id="green-beans"
-            >
-              <a href="#">
-                <Image
-                  className=" rounded-t-3xl "
-                  src="/Mask group (1).png"
-                  alt="Next.js logo"
-                  width={485}
-                  height={485}
-                  layout="responsive"
-                  objectFit="cover"
-                  priority
-                />
-              </a>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Green Beans
-                  </h5>
-                </a>
-                <button
-                  onClick={() => removeFromCart("greenBeans")}
-                  className="mt-2 bg-red-500 text-white py-2 px-4 rounded"
-                >
-                  -
-                </button>
-                <span className="mx-2">{counts.greenBeans}</span>
-                <button
-                  onClick={() => addToCart("greenBeans")}
-                  className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="">
-            <div
-              className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl"
-              id="pizza"
-            >
-              <a href="#">
-                <Image
-                  className=" rounded-t-3xl "
-                  src="/Mask group (2).png"
-                  alt="Next.js logo"
-                  width={485}
-                  height={485}
-                  layout="responsive"
-                  objectFit="cover"
-                  priority
-                />
-              </a>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Pizza
-                  </h5>
-                </a>
-                <button
-                  onClick={() => removeFromCart("pizza")}
-                  className="mt-2 bg-red-500 text-white py-2 px-4 rounded"
-                >
-                  -
-                </button>
-                <span className="mx-2">{counts.pizza}</span>
-                <button
-                  onClick={() => addToCart("pizza")}
-                  className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="">
-            <div
-              className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl"
-              id="chicken-pot-pie"
-            >
-              <a href="#">
-                <Image
-                  className=" rounded-t-3xl "
-                  src="/Mask group (3).png"
-                  alt="Next.js logo"
-                  width={485}
-                  height={485}
-                  layout="responsive"
-                  objectFit="cover"
-                  priority
-                />
-              </a>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Chicken Pot Pie
-                  </h5>
-                </a>
-                <button
-                  onClick={() => removeFromCart("chickenPotPie")}
-                  className="mt-2 bg-red-500 text-white py-2 px-4 rounded"
-                >
-                  -
-                </button>
-                <span className="mx-2">{counts.chickenPotPie}</span>
-                <button
-                  onClick={() => addToCart("chickenPotPie")}
-                  className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="">
-            <div
-              className="max-w-md bg-white  shadow dark:bg-gray-800 dark:border-gray-700 rounded-3xl"
-              id="green-salad"
-            >
-              <a href="#">
-                <Image
-                  className=" rounded-t-3xl "
-                  src="/Mask group (1).png"
-                  alt="Next.js logo"
-                  width={485}
-                  height={485}
-                  layout="responsive"
-                  objectFit="cover"
-                  priority
-                />
-              </a>
-              <div className="p-5">
-                <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Green Salad
-                  </h5>
-                </a>
-                <button
-                  onClick={() => removeFromCart("greenSalad")}
-                  className="mt-2 bg-red-500 text-white py-2 px-4 rounded"
-                >
-                  -
-                </button>
-                <span className="mx-2">{counts.greenSalad}</span>
-                <button
-                  onClick={() => addToCart("greenSalad")}
-                  className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      <ShoppingCart items={cartItems} />
     </section>
   );
 }
